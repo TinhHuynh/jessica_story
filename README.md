@@ -38,7 +38,7 @@
 
 
 ## Step By Step Run This Project
-1. **Clone the project**
+1. **Clone the project**: Use the command `git clone <repository-url>` to clone the project to your local machine.
 
 2. **Navigate to the project directory**: Use the command `cd <project-name>` to navigate into the root directory of the project.
 
