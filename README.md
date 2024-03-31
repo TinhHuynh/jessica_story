@@ -1,33 +1,26 @@
-### Resources 🔥
-
-* [Live Youtube](https://www.youtube.com/watch?v=d5yA9fL-lmU)
-* [Slide](https://docs.google.com/presentation/d/1eKI-QLp9XSVrp8e1_4nYcneAsakYjjhDmFxEiwSqUQc/edit?usp=sharing)
-
-
 ## Modularization Structure 🔥
 
     # Root Project
     .
-    ├── domains                # Name of directory
-    |   ├── domain A           # Domains module with a data and domains layer inside it.
-    |   ├── domain B
-    |   └── domain etc
-    |
-    ├── features               # Name of directory
-    |   ├── feature A          # Feature module with a presentation/ui/feature layer inside it.
-    |   ├── feature B
-    |   └── feature etc
-    |
     ├── lib                    # Name of module (default from Flutter)
-    |
-    └── resources              # Name of directory
-    |       └── resources      # Handle resources like assets, fonts, constant value, etc.
-    |
-    └── shared_libraries       # Name of directory
-        ├── common             # Handle common utility class.
-        ├── component          # Handle custom widget.
-        ├── core               # Core module.
-        └── dependencies       # Handle dependency version updates.
+    |   ├── domains            # Name of directory
+    |   |   ├── domain A       # Domains module with a data and domains layer inside it.
+    |   |   ├── domain B
+    |   |   └── domain etc
+    |   |
+    |   ├── features           # Name of directory
+    |   |   ├── feature A      # Feature module with a presentation/ui/feature layer inside it.
+    |   |   ├── feature B
+    |   |   └── feature etc
+    |   |
+    |   ├── resources          # Name of directory
+    |   |   └── resources      # Handle resources like assets, fonts, constant value, etc.
+    |   |
+    |   └── shared_libraries   # Name of directory
+    |       ├── common         # Handle common utility class.
+    |       ├── component      # Handle custom widget.
+    |       ├── core           # Core module.
+    |       └── dependencies   # Handle dependency version updates.
 
 
 ## Clean Architecture Flow (Feature Module) 🔥
@@ -42,23 +35,24 @@
 * [Dependency Injection (get_it)](https://pub.dev/packages/get_it) - Simple direct Service Locator that allows to decouple the interface from a concrete implementation and to access the concrete implementation from everywhere in your App.
 * [State Management (BLoC)](https://bloclibrary.dev/) - Business logic component to separate the business logic with UI.
 * [Dio](https://github.com/flutterchina/dio/) - A type-safe HTTP client.
-* [Melos](https://pub.dev/packages/melos) - A tool for managing Dart & Flutter repositories with multiple packages (monorepo).
-
-
-## Requirements 🛠
-* Flutter SDK Version: 2.10.0
-* Dart SDK Version: 2.16.0
 
 
 ## Step By Step Run This Project
-* Clone this project
-* Install [Melos](https://pub.dev/packages/melos).
-* Running **melos bootstrap** from your terminal.
-* Enjoy
+1. **Clone the project**
+
+2. **Navigate to the project directory**: Use the command `cd <project-name>` to navigate into the root directory of the project.
+
+3. **Check Flutter and Dart versions**: Make sure you have the correct versions of Flutter and Dart installed. You can check your versions with `flutter --version` and `dart --version`. If necessary, update your Flutter and Dart SDKs.
+
+4. **Get the dependencies**: Run `flutter pub get` to fetch the project dependencies.
+
+5. **Check for any dependency issues**: Run `flutter doctor` to check for any potential issues with your Flutter installation.
+
+6. **Run the project**: Use the command `flutter run` to start the project. If you have multiple devices connected, use `flutter run -d <device-id>` to specify the device.
 
 
 ## Author
 
-* **R Rifa Fauzi Komara**
+* **Tinh Huynh**
 
 Don't forget to follow me, fork and give me a ⭐
