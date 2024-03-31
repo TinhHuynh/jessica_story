@@ -1,13 +1,14 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:youtube_video/di/injections.dart';
-import 'package:youtube_video/resource/constant/named_routes.dart';
-import 'package:youtube_video/shared_libraries/common/utils/arguments/detail_you_tube_video_argument.dart';
-import 'package:youtube_video/shared_libraries/dependencies/get_it/get_it.dart';
 
+
+import 'di/injections.dart';
 import 'features/home/presentation/bloc/home_bloc.dart';
 import 'features/home/presentation/ui/home_screen.dart';
 import 'features/in_video_content/presentation/ui/detail_you_tube_video_screen.dart';
+import 'resource/constant/named_routes.dart';
+import 'shared_libraries/common/utils/arguments/detail_you_tube_video_argument.dart';
+import 'shared_libraries/dependencies/get_it/get_it.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

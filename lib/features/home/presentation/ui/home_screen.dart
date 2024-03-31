@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:youtube_video/shared_libraries/common/utils/state/view_data_state.dart';
+import 'package:jessica_story/shared_libraries/common/utils/state/view_data_state.dart';
 
 import '../../../../resource/constant/named_routes.dart';
 import '../../../../shared_libraries/common/utils/arguments/detail_you_tube_video_argument.dart';
