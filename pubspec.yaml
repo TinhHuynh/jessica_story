@@ -4,41 +4,26 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.16.0 <3.0.0"
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.10.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.2
-
-  # Features
-  home:
-    path: features/home
-  in_video_content:
-    path: features/in_video_content
-
-  # Domains
-  video:
-    path: domains/video
-
-  # Resources
-  resources:
-    path: resources/resources
-
-  # Shared libraries
-  common:
-    path: shared_libraries/common
-  component:
-    path: shared_libraries/component
-  core:
-    path: shared_libraries/core
-  dependencies:
-    path: shared_libraries/dependencies
+  cupertino_icons: ^1.0.6
+  bloc: ^8.1.4
+  flutter_bloc: ^8.1.5
+  dartz: ^0.10.1
+  dio: ^5.4.2+1
+  equatable: ^2.0.5
+  get_it: ^7.6.7
+  youtube_player_flutter: ^9.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^1.0.0
+  flutter_lints: ^3.0.2
 
 flutter:
   uses-material-design: true
+

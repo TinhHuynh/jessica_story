@@ -1,5 +1,5 @@
-import 'package:core/di/dependency.dart';
-import 'package:video/di/dependency.dart';
+import '../domain/di/dependency.dart';
+import '../shared_libraries/core/di/dependency.dart';
 
 class Injections {
   void init() {

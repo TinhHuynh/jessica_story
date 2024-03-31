@@ -1,12 +1,13 @@
-import 'package:common/utils/arguments/detail_you_tube_video_argument.dart';
-import 'package:resources/constant/named_routes.dart';
-import 'package:dependencies/bloc/bloc.dart';
-import 'package:dependencies/get_it/get_it.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:youtube_video/di/injections.dart';
-import 'package:home/presentation/bloc/bloc.dart';
-import 'package:home/presentation/ui/home_screen.dart';
-import 'package:in_video_content/presentation/ui/detail_you_tube_video_screen.dart';
+import 'package:youtube_video/resource/constant/named_routes.dart';
+import 'package:youtube_video/shared_libraries/common/utils/arguments/detail_you_tube_video_argument.dart';
+import 'package:youtube_video/shared_libraries/dependencies/get_it/get_it.dart';
+
+import 'features/home/presentation/bloc/home_bloc.dart';
+import 'features/home/presentation/ui/home_screen.dart';
+import 'features/in_video_content/presentation/ui/detail_you_tube_video_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,7 +17,7 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {

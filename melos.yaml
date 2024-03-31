@@ -1,8 +1,0 @@
-name: youtube_video
-
-packages:
-  - domains/**
-  - features/**
-  - resources/**
-  - shared_libraries/**
-  - '*'
