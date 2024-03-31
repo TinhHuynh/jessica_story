@@ -20,7 +20,7 @@
     |       ├── common         # Handle common utility class.
     |       ├── component      # Handle custom widget.
     |       ├── core           # Core module.
-    |       └── dependencies   # Handle dependency version updates.
+    |       └── dependencies   # Handle dependency injection related stuff.
 
 
 ## Clean Architecture Flow (Feature Module) 🔥
