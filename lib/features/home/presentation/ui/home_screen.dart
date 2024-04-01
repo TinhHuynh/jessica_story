@@ -47,20 +47,20 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('YouTube API Example'),
+        title: const Text('Jessica Story'),
       ),
       body: Center(
         child: BlocBuilder<HomeBloc, HomeState>(
           builder: (context, state) {
-            final status = state.statusYouTubeVideo.status;
+            final status = state.status;
             if (status.isLoading) {
               return const CircularProgressIndicator();
-            } else if (status.isError) {
-              return Text(state.statusYouTubeVideo.message);
-            } else if (status.isNoData) {
-              return Text(state.statusYouTubeVideo.message);
-            } else if (status.isHasData) {
-              final videos = state.statusYouTubeVideo.data?.items ?? [];
+            } else if (status.hasError) {
+              return Text(status.errorMessage ?? 'Error');
+            } else if (status.hasNoData) {
+              return const Text('No data');
+            } else if (status.hasData) {
+              final videos = state.videos?.items ?? [];
               final channelImageUrl = videos[0].snippet.thumbnails.medium.url;
               final channelTitle = videos[0].snippet.channelTitle;
               return Column(
