@@ -9,7 +9,7 @@ import '../error/failure_response.dart';
 abstract class UseCase<T, Params> {
   const UseCase();
 
-  Future<Either<FailureResponse, T>> call(Params params);
+  Future<Either<Failure, T>> call(Params params);
 }
 
 

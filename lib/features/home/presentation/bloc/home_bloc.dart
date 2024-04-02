@@ -4,6 +4,7 @@ import 'package:jessica_story/shared_libraries/common/utils/state/view_data_stat
 import '../../../../domain/domain/entities/youtube_video_entity.dart';
 import '../../../../domain/domain/usecases/get_video_usecase.dart';
 import '../../../../shared_libraries/common/utils/error/failure_response.dart';
+import '../../../../shared_libraries/core/pagination/paginated_result.dart';
 import 'home_event.dart';
 import 'home_state.dart';
 
@@ -17,33 +18,33 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   }
 
   _onEvent(HomeEvent event, Emitter<HomeState> emit) async {
-    if (event is SearchVideo) {
-      await _searchVideo(event.query, emit);
+    if (event is GetVideo) {
+      await getVideos(event.pageToken, emit);
     }
   }
 
-  Future<void> _searchVideo(String query, Emitter<HomeState> emit) async {
+  Future<void> getVideos(String? pageToken, Emitter<HomeState> emit) async {
     emit(state.copyWith(status: ViewStatus.loading()));
 
-    final newState = await getVideoUseCase.call(query).then((value) =>
-        value.fold((l) => _failureState(l), (r) => _successState(r)));
+    final newState = await getVideoUseCase
+        .call( GetVideosParams(pageToken: pageToken))
+        .then((value) =>
+            value.fold((l) => _failureState(l), (r) => _successState(r)));
     emit(newState);
   }
 
-  HomeState _failureState(FailureResponse failure) {
+  HomeState _failureState(Failure failure) {
     return state.copyWith(
       status: ViewStatus.error(msg: 'Failed to load data'),
     );
   }
 
   HomeState _successState(
-    YouTubeVideoEntity? data,
+    PaginatedResult<ItemVideoEntity> data,
   ) {
-    final videos = data?.items ?? [];
-    if (videos.isEmpty) {
-      return state.copyWith(status: ViewStatus.noData());
-    } else {
-      return state.copyWith(status: ViewStatus.loaded(), data: data);
-    }
+    return state.copyWith(
+      status: LoadedPaginatedData<ItemVideoEntity>(
+          items: data.items, nextPageToken: data.nextPageToken),
+    );
   }
 }

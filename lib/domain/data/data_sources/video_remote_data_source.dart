@@ -6,7 +6,7 @@ import '../models/youtube_video_dto.dart';
 abstract class VideoRemoteDataSource {
   const VideoRemoteDataSource();
 
-  Future<YouTubeVideoDTO> searchVideo(String query);
+  Future<PlaylistItemListDTO> getVideos(String? pageToken);
 }
 
 class VideoRemoteDataSourceImpl extends VideoRemoteDataSource {
@@ -17,21 +17,21 @@ class VideoRemoteDataSourceImpl extends VideoRemoteDataSource {
   });
 
   @override
-  Future<YouTubeVideoDTO> searchVideo(String query) async {
+  Future<PlaylistItemListDTO> getVideos(String? pageToken) async {
     try {
       final params = {
         'part': 'snippet',
-        'channelId': ApiConstant.channelId,
-        'maxResults': 100,
-        'q': query,
+        'playlistId': ApiConstant.playlistId,
+        'maxResults': 20,
         'key': ApiConstant.apiKey,
+        'pageToken': pageToken,
       };
 
       final response = await dio.get(
-        '${ApiConstant.baseUrl}search?',
+        '${ApiConstant.baseUrl}playlistItems?',
         queryParameters: params,
       );
-      return YouTubeVideoDTO.fromJson(response.data);
+      return PlaylistItemListDTO.fromJson(response.data);
     } catch (e) {
       rethrow;
     }

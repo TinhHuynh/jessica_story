@@ -27,6 +27,17 @@ final class Initial extends ViewStatus {}
 
 final class LoadedData extends ViewStatus {}
 
+final class LoadedPaginatedData<T> extends ViewStatus with EquatableMixin {
+  final String? nextPageToken;
+
+  final List<T> items;
+
+  LoadedPaginatedData({required this.items, this.nextPageToken});
+
+  @override
+  List<Object?> get props => [items, nextPageToken];
+}
+
 final class HasError extends ViewStatus with EquatableMixin {
   final Object? error;
   final String? message;
