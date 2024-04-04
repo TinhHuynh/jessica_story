@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
 
-import '../../../shared_libraries/common/utils/error/failure_response.dart';
-import '../../../shared_libraries/core/pagination/paginated_result.dart';
+import '../../../shared_libraries/common/utils/error/failure.dart';
 import '../../domain/entities/youtube_video_entity.dart';
 import '../../domain/repositories/video_repository.dart';
+import '../../shared_libraries/common/utils/pagination/paginated_result.dart';
 import '../data_sources/video_remote_data_source.dart';
 import '../mappers/video_mapper.dart';
 
@@ -27,7 +27,6 @@ class VideoRepositoryImpl extends VideoRepository {
         nextPageToken: playlist.nextPageToken,
       ));
     } catch (error) {
-      print('error here $error');
       return Left(Failure(errorMessage: error.toString()));
     }
   }

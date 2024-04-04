@@ -4,7 +4,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 
-import '../error/failure_response.dart';
+import '../error/failure.dart';
 
 abstract class UseCase<T, Params> {
   const UseCase();

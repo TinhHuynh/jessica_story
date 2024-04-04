@@ -1,9 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
-import 'package:jessica_story/domain/domain/entities/youtube_video_entity.dart';
 import 'package:jessica_story/shared_libraries/common/utils/state/view_data_state.dart';
 
+import '../../../../domain/entities/youtube_video_entity.dart';
 import '../../../../resource/constant/named_routes.dart';
 import '../../../../shared_libraries/common/utils/arguments/detail_you_tube_video_argument.dart';
 import '../../../../shared_libraries/component/card/card_youtube.dart';
