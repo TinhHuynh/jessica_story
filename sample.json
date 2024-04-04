@@ -1,0 +1,246 @@
+{
+  "kind": "youtube#playlistItemListResponse",
+  "etag": "AOEZBTpO1puTFD8gFOJdYbdrRXw",
+  "nextPageToken": "EAAajgFQVDpDQVVpRUVKQ1FUQkVNRFF3T1RBMVF6WXdOalVvQVVqeG1wZkNxcU9GQTFBQldrVWlRMmxLVVZSSVZubE5SV1JZVTBjNVQxUkdWWGxZZW1oTlRWWlpNVm94WkdsYU1HTTBWMWM0ZW1GV1ZqRmxWamxSUldkM1NUQk1Oblp6UVZsUk5rMU1WalJuU1NJ",
+  "items": [
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "wQB6retnbW32JkHO8LHLF8ZuzKc",
+      "id": "UEx1cjBHV0hvTkxVMl84TDFWNWdXYmdHOFlvM2lVdXlfUC41OURENDc2NEM1MDI5Mjky",
+      "snippet": {
+        "publishedAt": "2024-04-02T04:30:17Z",
+        "channelId": "UCbEpGD5poUnIFNzLERpEpgA",
+        "title": "Hết hợp đồng, Jes Si Cà lưu luyến sắp phải chia tay Jenniphơ | Jes Si Cà Dương Lâm và cuộc sống ở Mỹ",
+        "description": "#leduongbaolam  #VieNETWORK\nHết hợp đồng, Jes Si Cà lưu luyến sắp phải chia tay Jenniphơ | Jes Si Cà Dương Lâm và cuộc sống ở Mỹ\n---------------------------------\n🥳Chào mừng bạn đến với YouTube chính thức của Lê Dương Bảo Lâm ✌️\nCác bạn nhớ Đăng ký, Like và Share để ủng hộ tinh thần cho anh Dương Lâm Đồng Nai RA DẺ nhiều hơn và nhận được những thông tin, video mới nhất về các hoạt động RA DẺ của Lê Dương Bảo Lâm ngaaa 😍\n▶️Kênh YouTube: https://bit.ly/subLeDuongBaoLam\n▶️Kênh YouTube Shorts: https://bit.ly/subLDBLshorts\n▶️Fanpage chính thức: https://www.facebook.com/duonglamshowbiz\n#leduongbaolam #quynhquynh #bảo_nhi #bảo_ngọc \n🙇\u200d♂️Rất cảm ơn các anh chị, các bạn đã ủng hộ Bảo Lâm trong suốt thời gian qua!\n©️ Mọi nội dung được khai thác và bảo vệ bởi VieNETWORK, đề nghị không re-up dưới mọi hình thức.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/L4LebpVwN3Q/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/L4LebpVwN3Q/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/L4LebpVwN3Q/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/L4LebpVwN3Q/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/L4LebpVwN3Q/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Lê Dương Bảo Lâm",
+        "playlistId": "PLur0GWHoNLU2_8L1V5gWbgG8Yo3iUuy_P",
+        "position": 0,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "L4LebpVwN3Q"
+        },
+        "videoOwnerChannelTitle": "Lê Dương Bảo Lâm",
+        "videoOwnerChannelId": "UCbEpGD5poUnIFNzLERpEpgA"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "RqoVLIxv7s4dE2sv0besdPbfHDQ",
+      "id": "UEx1cjBHV0hvTkxVMl84TDFWNWdXYmdHOFlvM2lVdXlfUC4wRjhFM0MxMTU1MEUzQ0VB",
+      "snippet": {
+        "publishedAt": "2024-04-02T08:33:19Z",
+        "channelId": "UCbEpGD5poUnIFNzLERpEpgA",
+        "title": "Chấn động Jenniphơ \"thả dáng\" bên cây cầu nổi tiếng ở Mỹ | Jes Si Cà Dương Lâm và cuộc sống ở Mỹ",
+        "description": "#leduongbaolam  #VieNETWORK\nChấn động Jenniphơ \"thả dáng\" bên cây cầu nổi tiếng ở Mỹ | Jes Si Cà Dương Lâm và cuộc sống ở Mỹ\n---------------------------------\n🥳Chào mừng bạn đến với YouTube chính thức của Lê Dương Bảo Lâm ✌️\nCác bạn nhớ Đăng ký, Like và Share để ủng hộ tinh thần cho anh Dương Lâm Đồng Nai RA DẺ nhiều hơn và nhận được những thông tin, video mới nhất về các hoạt động RA DẺ của Lê Dương Bảo Lâm ngaaa 😍\n▶️Kênh YouTube: https://bit.ly/subLeDuongBaoLam\n▶️Kênh YouTube Shorts: https://bit.ly/subLDBLshorts\n▶️Fanpage chính thức: https://www.facebook.com/duonglamshowbiz\n#leduongbaolam #quynhquynh #bảo_nhi #bảo_ngọc \n🙇\u200d♂️Rất cảm ơn các anh chị, các bạn đã ủng hộ Bảo Lâm trong suốt thời gian qua!\n©️ Mọi nội dung được khai thác và bảo vệ bởi VieNETWORK, đề nghị không re-up dưới mọi hình thức.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/gMApIsUNaso/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/gMApIsUNaso/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/gMApIsUNaso/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/gMApIsUNaso/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/gMApIsUNaso/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Lê Dương Bảo Lâm",
+        "playlistId": "PLur0GWHoNLU2_8L1V5gWbgG8Yo3iUuy_P",
+        "position": 1,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "gMApIsUNaso"
+        },
+        "videoOwnerChannelTitle": "Lê Dương Bảo Lâm",
+        "videoOwnerChannelId": "UCbEpGD5poUnIFNzLERpEpgA"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "lIedYQFZgKEzvNmmevSale0rx9M",
+      "id": "UEx1cjBHV0hvTkxVMl84TDFWNWdXYmdHOFlvM2lVdXlfUC4zMUEyMkQwOTk0NTg4MDgw",
+      "snippet": {
+        "publishedAt": "2024-04-01T08:55:20Z",
+        "channelId": "UCbEpGD5poUnIFNzLERpEpgA",
+        "title": "Jes Si Cà lái \"siêu xe\" chở Jenniphơ đi ăn kem | Jes Si Cà Dương Lâm và cuộc sống ở Mỹ",
+        "description": "#leduongbaolam  #VieNETWORK\nJes Si Cà lái \"siêu xe\" chở Jenniphơ đi ăn kem | Jes Si Cà Dương Lâm và cuộc sống ở Mỹ\n---------------------------------\n🥳Chào mừng bạn đến với YouTube chính thức của Lê Dương Bảo Lâm ✌️\nCác bạn nhớ Đăng ký, Like và Share để ủng hộ tinh thần cho anh Dương Lâm Đồng Nai RA DẺ nhiều hơn và nhận được những thông tin, video mới nhất về các hoạt động RA DẺ của Lê Dương Bảo Lâm ngaaa 😍\n▶️Kênh YouTube: https://bit.ly/subLeDuongBaoLam\n▶️Kênh YouTube Shorts: https://bit.ly/subLDBLshorts\n▶️Fanpage chính thức: https://www.facebook.com/duonglamshowbiz\n#leduongbaolam #quynhquynh #bảo_nhi #bảo_ngọc \n🙇\u200d♂️Rất cảm ơn các anh chị, các bạn đã ủng hộ Bảo Lâm trong suốt thời gian qua!\n©️ Mọi nội dung được khai thác và bảo vệ bởi VieNETWORK, đề nghị không re-up dưới mọi hình thức.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/VIC7ZQl_H80/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/VIC7ZQl_H80/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/VIC7ZQl_H80/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/VIC7ZQl_H80/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/VIC7ZQl_H80/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Lê Dương Bảo Lâm",
+        "playlistId": "PLur0GWHoNLU2_8L1V5gWbgG8Yo3iUuy_P",
+        "position": 2,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "VIC7ZQl_H80"
+        },
+        "videoOwnerChannelTitle": "Lê Dương Bảo Lâm",
+        "videoOwnerChannelId": "UCbEpGD5poUnIFNzLERpEpgA"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "O9ULZnaU56BoUozgE6MzrhKCe6Q",
+      "id": "UEx1cjBHV0hvTkxVMl84TDFWNWdXYmdHOFlvM2lVdXlfUC4wMTYxQzVBRDI1NEVDQUZE",
+      "snippet": {
+        "publishedAt": "2024-04-01T07:52:38Z",
+        "channelId": "UCbEpGD5poUnIFNzLERpEpgA",
+        "title": "Khán giả yêu thương ủng hộ quá xin cảm ơn tất cả mọi người | Jes Si Cà Dương Lâm và cuộc sống ở Mỹ",
+        "description": "#leduongbaolam  #VieNETWORK\nKhán giả yêu thương ủng hộ quá xin cảm ơn tất cả mọi người | Jes Si Cà Dương Lâm và cuộc sống ở Mỹ\n---------------------------------\n🥳Chào mừng bạn đến với YouTube chính thức của Lê Dương Bảo Lâm ✌️\nCác bạn nhớ Đăng ký, Like và Share để ủng hộ tinh thần cho anh Dương Lâm Đồng Nai RA DẺ nhiều hơn và nhận được những thông tin, video mới nhất về các hoạt động RA DẺ của Lê Dương Bảo Lâm ngaaa 😍\n▶️Kênh YouTube: https://bit.ly/subLeDuongBaoLam\n▶️Kênh YouTube Shorts: https://bit.ly/subLDBLshorts\n▶️Fanpage chính thức: https://www.facebook.com/duonglamshowbiz\n#leduongbaolam #quynhquynh #bảo_nhi #bảo_ngọc \n🙇\u200d♂️Rất cảm ơn các anh chị, các bạn đã ủng hộ Bảo Lâm trong suốt thời gian qua!\n©️ Mọi nội dung được khai thác và bảo vệ bởi VieNETWORK, đề nghị không re-up dưới mọi hình thức.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/XjwFkptHfcc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/XjwFkptHfcc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/XjwFkptHfcc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/XjwFkptHfcc/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/XjwFkptHfcc/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Lê Dương Bảo Lâm",
+        "playlistId": "PLur0GWHoNLU2_8L1V5gWbgG8Yo3iUuy_P",
+        "position": 3,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "XjwFkptHfcc"
+        },
+        "videoOwnerChannelTitle": "Lê Dương Bảo Lâm",
+        "videoOwnerChannelId": "UCbEpGD5poUnIFNzLERpEpgA"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "aShL80hQoLVY3cF6MIR173sZDuQ",
+      "id": "UEx1cjBHV0hvTkxVMl84TDFWNWdXYmdHOFlvM2lVdXlfUC4wNEU1MTI4NkZEMzVBN0JF",
+      "snippet": {
+        "publishedAt": "2024-04-01T02:49:58Z",
+        "channelId": "UCbEpGD5poUnIFNzLERpEpgA",
+        "title": "Jes Si Cà - Jenniphơ bị íu nghề, tập 4 ngày không thuộc tuồng |Jes Si Cà Dương Lâm và cuộc sống ở Mỹ",
+        "description": "#leduongbaolam  #VieNETWORK\n\n---------------------------------\n🥳Chào mừng bạn đến với YouTube chính thức của Lê Dương Bảo Lâm ✌️\nCác bạn nhớ Đăng ký, Like và Share để ủng hộ tinh thần cho anh Dương Lâm Đồng Nai RA DẺ nhiều hơn và nhận được những thông tin, video mới nhất về các hoạt động RA DẺ của Lê Dương Bảo Lâm ngaaa 😍\n▶️Kênh YouTube: https://bit.ly/subLeDuongBaoLam\n▶️Kênh YouTube Shorts: https://bit.ly/subLDBLshorts\n▶️Fanpage chính thức: https://www.facebook.com/duonglamshowbiz\n#leduongbaolam #quynhquynh #bảo_nhi #bảo_ngọc \n🙇\u200d♂️Rất cảm ơn các anh chị, các bạn đã ủng hộ Bảo Lâm trong suốt thời gian qua!\n©️ Mọi nội dung được khai thác và bảo vệ bởi VieNETWORK, đề nghị không re-up dưới mọi hình thức.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/fzTv5zo25Oo/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/fzTv5zo25Oo/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/fzTv5zo25Oo/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/fzTv5zo25Oo/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/fzTv5zo25Oo/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Lê Dương Bảo Lâm",
+        "playlistId": "PLur0GWHoNLU2_8L1V5gWbgG8Yo3iUuy_P",
+        "position": 4,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "fzTv5zo25Oo"
+        },
+        "videoOwnerChannelTitle": "Lê Dương Bảo Lâm",
+        "videoOwnerChannelId": "UCbEpGD5poUnIFNzLERpEpgA"
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 66,
+    "resultsPerPage": 5
+  }
+}

@@ -1,10 +1,11 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
+import 'package:jessica_story/domain/domain/entities/youtube_video_entity.dart';
 import 'package:jessica_story/shared_libraries/common/utils/state/view_data_state.dart';
 
 import '../../../../resource/constant/named_routes.dart';
 import '../../../../shared_libraries/common/utils/arguments/detail_you_tube_video_argument.dart';
-import '../../../../shared_libraries/component/card/card_channel.dart';
 import '../../../../shared_libraries/component/card/card_youtube.dart';
 import '../bloc/home_bloc.dart';
 import '../bloc/home_event.dart';
@@ -18,8 +19,11 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  void _getVideo(BuildContext context) {
-    context.read<HomeBloc>().add(const SearchVideo(query: 'Jesica'));
+  final PagingController<String?, ItemVideoEntity> _pagingController =
+      PagingController(firstPageKey: null);
+
+  void _getVideo(BuildContext context, String? pageToken) {
+    context.read<HomeBloc>().add(GetVideo(pageToken: pageToken));
   }
 
   void _navigateToDetail({
@@ -38,76 +42,62 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   @override
-  void initState() {
+  initState() {
     super.initState();
-    _getVideo(context);
+    _pagingController.addPageRequestListener((pageKey) {
+      _getVideo(context, pageKey);
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('YouTube API Example'),
+        title: const Text('Jessica Story'),
       ),
       body: Center(
-        child: BlocBuilder<HomeBloc, HomeState>(
+        child: BlocConsumer<HomeBloc, HomeState>(
           builder: (context, state) {
-            final status = state.statusYouTubeVideo.status;
-            if (status.isLoading) {
-              return const CircularProgressIndicator();
-            } else if (status.isError) {
-              return Text(state.statusYouTubeVideo.message);
-            } else if (status.isNoData) {
-              return Text(state.statusYouTubeVideo.message);
-            } else if (status.isHasData) {
-              final videos = state.statusYouTubeVideo.data?.items ?? [];
-              final channelImageUrl = videos[0].snippet.thumbnails.medium.url;
-              final channelTitle = videos[0].snippet.channelTitle;
-              return Column(
-                children: [
-                  CardChannel(
-                    channelImageUrl: channelImageUrl,
-                    channelTitle: channelTitle,
-                  ),
-                  Expanded(
-                    child: Scrollbar(
-                      child: Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: ListView.builder(
-                          padding: EdgeInsets.zero,
-
-                          /// Why added -1, because the we hardcoded the first index for channel
-                          itemCount: videos.length - 1,
-                          physics: const ClampingScrollPhysics(),
-                          itemBuilder: (context, index) {
-                            /// Why added +1, because the we hardcoded the first index for channel
-                            final video = videos[index + 1];
-                            final youTubeImageUrl =
-                                video.snippet.thumbnails.medium.url;
-                            final youTubeTitle = video.snippet.title;
-                            final youTubeId = video.id.videoId;
-                            return CardYouTube(
-                              youTubeImageUrl: youTubeImageUrl,
-                              youTubeTitle: youTubeTitle,
-                              onPressed: () => _navigateToDetail(
-                                context: context,
-                                youTubeTitle: youTubeTitle,
-                                youTubeId: youTubeId,
-                              ),
-                            );
-                          },
-                        ),
-                      ),
+            return PagedListView(
+              padding: const EdgeInsets.all(10),
+              pagingController: _pagingController,
+              builderDelegate: PagedChildBuilderDelegate<ItemVideoEntity>(
+                itemBuilder: (context, item, index) {
+                  final youTubeImageUrl = item.snippet.thumbnails.medium.url;
+                  final youTubeTitle = item.snippet.title;
+                  final youTubeId = item.id.videoId;
+                  return CardYouTube(
+                    youTubeImageUrl: youTubeImageUrl,
+                    youTubeTitle: youTubeTitle,
+                    onPressed: () => _navigateToDetail(
+                      context: context,
+                      youTubeTitle: youTubeTitle,
+                      youTubeId: youTubeId,
                     ),
-                  ),
-                ],
+                  );
+                },
+              ),
+            );
+          },
+          listener: (BuildContext context, HomeState state) {
+            final status = state.status;
+            if (status is LoadedPaginatedData<ItemVideoEntity>) {
+              _pagingController.appendPage(
+                status.items,
+                status.nextPageToken,
               );
-            } else {
-              return const SizedBox();
+            } else if (status is HasError) {
+              _pagingController.error = status;
             }
           },
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _pagingController.dispose();
+    super.dispose();
   }
 }

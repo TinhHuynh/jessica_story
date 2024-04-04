@@ -1,56 +1,65 @@
-import '../error/failure_response.dart';
+import 'package:equatable/equatable.dart';
 
-enum ViewState { initial, loading, error, hasData, noData }
+abstract class ViewState<S extends ViewStatus> {
+  final S status;
 
-extension ViewStateExtension on ViewState {
-  bool get isLoading => this == ViewState.loading;
-
-  bool get isInitial => this == ViewState.initial;
-
-  bool get isError => this == ViewState.error;
-
-  bool get isHasData => this == ViewState.hasData;
-
-  bool get isNoData => this == ViewState.noData;
+  ViewState({required this.status});
 }
 
-class ViewData<T> {
-  ViewState status;
-  T? data;
-  String message = "";
-  FailureResponse? failure;
+abstract class ViewStatus {
+  ViewStatus();
 
-  ViewData._({
-    required this.status,
-    this.data,
-    this.message = "",
-    this.failure,
-  });
+  factory ViewStatus.loading() => Loading();
 
-  factory ViewData.loaded({T? data}) {
-    return ViewData._(status: ViewState.hasData, data: data);
-  }
+  factory ViewStatus.initial() => Initial();
 
-  factory ViewData.error({
-    required String message,
-    required FailureResponse? failure,
-  }) {
-    return ViewData._(
-      status: ViewState.error,
-      message: message,
-      failure: failure,
-    );
-  }
+  factory ViewStatus.loaded() => LoadedData();
 
-  factory ViewData.loading({required String message}) {
-    return ViewData._(status: ViewState.loading, message: message);
-  }
+  factory ViewStatus.error({Object? error, String? msg}) =>
+      HasError(error: error, message: msg);
 
-  factory ViewData.initial() {
-    return ViewData._(status: ViewState.initial);
-  }
+  factory ViewStatus.noData() => HasNoData();
+}
 
-  factory ViewData.noData({required String message}) {
-    return ViewData._(status: ViewState.noData, message: message);
-  }
+class Loading extends ViewStatus {}
+
+final class Initial extends ViewStatus {}
+
+final class LoadedData extends ViewStatus {}
+
+final class LoadedPaginatedData<T> extends ViewStatus with EquatableMixin {
+  final String? nextPageToken;
+
+  final List<T> items;
+
+  LoadedPaginatedData({required this.items, this.nextPageToken});
+
+  @override
+  List<Object?> get props => [items, nextPageToken];
+}
+
+final class HasError extends ViewStatus with EquatableMixin {
+  final Object? error;
+  final String? message;
+
+  HasError({this.error, this.message});
+
+  @override
+  List<Object?> get props => [error, message];
+}
+
+final class HasNoData extends ViewStatus {}
+
+extension ViewStatusExtension on ViewStatus {
+  bool get isLoading => this is Loading;
+
+  bool get isInitial => this is Initial;
+
+  bool get hasData => this is LoadedData;
+
+  bool get hasError => this is HasError;
+
+  bool get hasNoData => this is HasNoData;
+
+  String? get errorMessage => (this as HasError).message;
 }

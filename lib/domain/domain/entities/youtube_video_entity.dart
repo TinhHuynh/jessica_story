@@ -1,19 +1,21 @@
 import 'package:equatable/equatable.dart';
 
-
-class YouTubeVideoEntity extends Equatable {
-  const YouTubeVideoEntity({
+class PlaylistEntity extends Equatable {
+  const PlaylistEntity({
     required this.kind,
     required this.etag,
     required this.items,
+    this.nextPageToken,
   });
 
   final String kind;
   final String etag;
   final List<ItemVideoEntity> items;
 
+  final String? nextPageToken;
+
   @override
-  List<Object> get props => [kind, etag, items];
+  List<Object?> get props => [kind, etag, items, nextPageToken];
 }
 
 class ItemVideoEntity extends Equatable {
@@ -82,6 +84,9 @@ class ThumbnailsVideoEntity extends Equatable {
     required this.medium,
   });
 
+  factory ThumbnailsVideoEntity.unavailable() =>
+      ThumbnailsVideoEntity(medium: MediumVideoEntity.unavailable());
+
   final MediumVideoEntity medium;
 
   @override
@@ -94,6 +99,9 @@ class MediumVideoEntity extends Equatable {
     required this.width,
     required this.height,
   });
+
+  factory MediumVideoEntity.unavailable() =>
+      const MediumVideoEntity(url: 'https://i0.wp.com/pambos.wine/wp-content/plugins/elementor/assets/images/placeholder.png?w=640&ssl=1', width: 0, height: 0);
 
   final String url;
   final int width;

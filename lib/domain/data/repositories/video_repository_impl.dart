@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 
 import '../../../shared_libraries/common/utils/error/failure_response.dart';
+import '../../../shared_libraries/core/pagination/paginated_result.dart';
 import '../../domain/entities/youtube_video_entity.dart';
 import '../../domain/repositories/video_repository.dart';
 import '../data_sources/video_remote_data_source.dart';
@@ -16,13 +17,18 @@ class VideoRepositoryImpl extends VideoRepository {
   });
 
   @override
-  Future<Either<FailureResponse, YouTubeVideoEntity>> searchVideo(
-      String query) async {
+  Future<Either<Failure,  PaginatedResult<ItemVideoEntity>>> getVideos(
+      String? pageToken) async {
     try {
-      final response = await remoteDataSource.searchVideo(query);
-      return Right(videoMapper.mapYouTubeVideoDTOtoEntity(response));
-    } on Exception catch (error) {
-      return Left(FailureResponse(errorMessage: error.toString()));
+      final response = await remoteDataSource.getVideos(pageToken);
+      final playlist = videoMapper.mapPlaylistItemListDTOtoEntity(response);
+      return Right(PaginatedResult(
+        items: playlist.items,
+        nextPageToken: playlist.nextPageToken,
+      ));
+    } catch (error) {
+      print('error here $error');
+      return Left(Failure(errorMessage: error.toString()));
     }
   }
 }

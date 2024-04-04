@@ -4,104 +4,69 @@ import '../models/youtube_video_dto.dart';
 class VideoMapper {
   const VideoMapper();
 
-  YouTubeVideoEntity mapYouTubeVideoDTOtoEntity(YouTubeVideoDTO? dto) {
-    final items = <ItemVideoEntity>[];
-    for (ItemVideoDTO i in dto?.items ?? []) {
-      items.add(mapItemVideoDTOtoEntity(i));
-    }
-    return YouTubeVideoEntity(
+  PlaylistEntity mapPlaylistItemListDTOtoEntity(PlaylistItemListDTO? dto) {
+    return PlaylistEntity(
       kind: dto?.kind ?? '',
       etag: dto?.etag ?? '',
-      items: items,
+      items: dto?.items?.map(mapPlaylistItemDTOtoEntity).toList() ?? [],
+      nextPageToken: dto?.nextPageToken,
     );
   }
 
-  ItemVideoEntity mapItemVideoDTOtoEntity(ItemVideoDTO? dto) {
+  ItemVideoEntity mapPlaylistItemDTOtoEntity(PlaylistItemDTO dto) {
+    if (dto.snippet == null) {
+      throw Exception('Snippet is null');
+    }
+    if (dto.snippet?.resourceId == null) {
+      throw Exception('Resource id is null');
+    }
     return ItemVideoEntity(
-      kind: dto?.kind ?? '',
-      etag: dto?.etag ?? '',
-      id: mapIdVideoDTOtoEntity(dto?.id),
-      snippet: mapSnippetVideoDTOtoEntity(dto?.snippet),
+      kind: dto.kind ?? '',
+      etag: dto.etag ?? '',
+      id: mapIdVideoDTOtoEntity(dto.snippet!.resourceId!),
+      snippet: mapSnippetVideoDTOtoEntity(dto.snippet!),
     );
   }
 
-  IdVideoEntity mapIdVideoDTOtoEntity(IdVideoDTO? dto) {
-    return IdVideoEntity(kind: dto?.kind ?? '', videoId: dto?.videoId ?? '');
+  IdVideoEntity mapIdVideoDTOtoEntity(ResourceIdDTO dto) {
+    return IdVideoEntity(kind: dto.kind ?? '', videoId: dto.videoId ?? '');
   }
 
-  SnippetVideoEntity mapSnippetVideoDTOtoEntity(SnippetVideoDTO? dto) {
-    return SnippetVideoEntity(
-      publishedAt: dto?.publishedAt ?? '',
-      channelId: dto?.channelId ?? '',
-      title: dto?.title ?? '',
-      description: dto?.description ?? '',
-      thumbnails: mapThumbnailsVideoDTOtoEntity(dto?.thumbnails),
-      channelTitle: dto?.channelTitle ?? '',
-      publishTime: dto?.publishTime ?? '',
-    );
-  }
-
-  ThumbnailsVideoEntity mapThumbnailsVideoDTOtoEntity(ThumbnailsVideoDTO? dto) {
-    return ThumbnailsVideoEntity(
-        medium: mapMediumVideoDTOtoEntity(dto?.medium));
-  }
-
-  MediumVideoEntity mapMediumVideoDTOtoEntity(MediumVideoDTO? dto) {
-    return MediumVideoEntity(
-      url: dto?.url ?? '',
-      width: dto?.width ?? 0,
-      height: dto?.height ?? 0,
-    );
-  }
-
-  YouTubeVideoDTO mapYouTubeVideoEntityToDTO(YouTubeVideoEntity entity) {
-    final items = <ItemVideoDTO>[];
-    for (ItemVideoEntity i in entity.items) {
-      items.add(mapItemVideoEntityToDTO(i));
+  SnippetVideoEntity mapSnippetVideoDTOtoEntity(SnippetDTO dto) {
+    if (dto.thumbnails == null) {
+      throw Exception('Thumbnails is null');
     }
-
-    return YouTubeVideoDTO(
-      kind: entity.kind,
-      etag: entity.etag,
-      items: items,
+    return SnippetVideoEntity(
+      publishedAt: dto.publishedAt ?? '',
+      channelId: dto.channelId ?? '',
+      title: dto.title ?? '',
+      description: dto.description ?? '',
+      thumbnails: mapThumbnailsVideoDTOtoEntity(dto.thumbnails!),
+      channelTitle: dto.channelTitle ?? '',
+      publishTime: dto.publishedAt ?? '',
     );
   }
 
-  ItemVideoDTO mapItemVideoEntityToDTO(ItemVideoEntity entity) {
-    return ItemVideoDTO(
-      kind: entity.kind,
-      etag: entity.etag,
-      id: mapIdVideoEntityToDTO(entity.id),
-      snippet: mapSnippetVideoEntityToDTO(entity.snippet),
-    );
+  ThumbnailsVideoEntity mapThumbnailsVideoDTOtoEntity(ThumbnailsDTO dto) {
+    final thumbnail = [
+      dto.medium,
+      dto.high,
+      dto.standard,
+      dto.maxres,
+      dto.defaultThumbnail
+    ].firstOrNull;
+    if (thumbnail == null) {
+      return ThumbnailsVideoEntity.unavailable();
+    }
+    return ThumbnailsVideoEntity(
+        medium: mapMediumVideoDTOtoEntity(dto.medium!));
   }
 
-  IdVideoDTO mapIdVideoEntityToDTO(IdVideoEntity entity) {
-    return IdVideoDTO(kind: entity.kind, videoId: entity.videoId);
-  }
-
-  SnippetVideoDTO mapSnippetVideoEntityToDTO(SnippetVideoEntity entity) {
-    return SnippetVideoDTO(
-      publishedAt: entity.publishedAt,
-      channelId: entity.channelId,
-      title: entity.title,
-      description: entity.description,
-      thumbnails: mapThumbnailsVideoEntityToDTO(entity.thumbnails),
-      channelTitle: entity.channelTitle,
-      publishTime: entity.publishTime,
-    );
-  }
-
-  ThumbnailsVideoDTO mapThumbnailsVideoEntityToDTO(
-      ThumbnailsVideoEntity entity) {
-    return ThumbnailsVideoDTO(medium: mapMediumVideoEntityToDTO(entity.medium));
-  }
-
-  MediumVideoDTO mapMediumVideoEntityToDTO(MediumVideoEntity entity) {
-    return MediumVideoDTO(
-      url: entity.url,
-      width: entity.width,
-      height: entity.height,
+  MediumVideoEntity mapMediumVideoDTOtoEntity(ThumbnailDetailDTO dto) {
+    return MediumVideoEntity(
+      url: dto.url ?? '',
+      width: dto.width ?? 0,
+      height: dto.height ?? 0,
     );
   }
 }
