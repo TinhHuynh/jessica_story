@@ -58,12 +58,12 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Center(
         child: BlocConsumer<HomeBloc, HomeState>(
           builder: (context, state) {
-            return PagedListView(
-              padding: const EdgeInsets.all(10),
+            return PagedListView.separated(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
               pagingController: _pagingController,
               builderDelegate: PagedChildBuilderDelegate<ItemVideoEntity>(
                 itemBuilder: (context, item, index) {
-                  final youTubeImageUrl = item.snippet.thumbnails.medium.url;
+                  final youTubeImageUrl = item.snippet.thumbnails.detail.url;
                   final youTubeTitle = item.snippet.title;
                   final youTubeId = item.id.videoId;
                   return CardYouTube(
@@ -76,6 +76,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   );
                 },
+              ),
+              separatorBuilder: (BuildContext context, int index) =>
+                  const SizedBox(
+                height: 16,
               ),
             );
           },

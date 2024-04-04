@@ -59,11 +59,11 @@ class VideoMapper {
       return ThumbnailsVideoEntity.unavailable();
     }
     return ThumbnailsVideoEntity(
-        medium: mapMediumVideoDTOtoEntity(dto.medium!));
+        detail: mapMediumVideoDTOtoEntity(dto.medium!));
   }
 
-  MediumVideoEntity mapMediumVideoDTOtoEntity(ThumbnailDetailDTO dto) {
-    return MediumVideoEntity(
+  ThumbnailDetailEntity mapMediumVideoDTOtoEntity(ThumbnailDetailDTO dto) {
+    return ThumbnailDetailEntity(
       url: dto.url ?? '',
       width: dto.width ?? 0,
       height: dto.height ?? 0,
