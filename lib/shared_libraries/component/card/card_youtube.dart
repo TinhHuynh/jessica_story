@@ -17,18 +17,28 @@ class CardYouTube extends StatelessWidget {
     return InkWell(
       onTap: onPressed,
       child: Card(
-        child: Container(
-          padding: const EdgeInsets.all(5),
-          child: Row(
-            children: [
-              Image.network(
-                youTubeImageUrl,
-                width: 100,
-                height: 100,
-              ),
-              const SizedBox(width: 20),
-              Expanded(child: Text(youTubeTitle)),
-            ],
+        borderOnForeground: true,
+        child: SizedBox(
+          width: MediaQuery.sizeOf(context).width,
+          height: 300,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(12),
+            child: Column(
+              children: [
+                Image.network(
+                  youTubeImageUrl,
+                  fit: BoxFit.cover,
+                  height: 200,
+                  width: MediaQuery.sizeOf(context).width,
+            
+                ),
+                const SizedBox(height: 20),
+                Padding(
+                  padding:  const EdgeInsets.symmetric(horizontal: 16),
+                  child: Expanded(child: Text(youTubeTitle)),
+                ),
+              ],
+            ),
           ),
         ),
       ),

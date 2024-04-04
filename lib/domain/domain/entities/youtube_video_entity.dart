@@ -81,27 +81,27 @@ class SnippetVideoEntity extends Equatable {
 
 class ThumbnailsVideoEntity extends Equatable {
   const ThumbnailsVideoEntity({
-    required this.medium,
+    required this.detail,
   });
 
   factory ThumbnailsVideoEntity.unavailable() =>
-      ThumbnailsVideoEntity(medium: MediumVideoEntity.unavailable());
+      ThumbnailsVideoEntity(detail: ThumbnailDetailEntity.unavailable());
 
-  final MediumVideoEntity medium;
+  final ThumbnailDetailEntity detail;
 
   @override
-  List<Object> get props => [medium];
+  List<Object> get props => [detail];
 }
 
-class MediumVideoEntity extends Equatable {
-  const MediumVideoEntity({
+class ThumbnailDetailEntity extends Equatable {
+  const ThumbnailDetailEntity({
     required this.url,
     required this.width,
     required this.height,
   });
 
-  factory MediumVideoEntity.unavailable() =>
-      const MediumVideoEntity(url: 'https://i0.wp.com/pambos.wine/wp-content/plugins/elementor/assets/images/placeholder.png?w=640&ssl=1', width: 0, height: 0);
+  factory ThumbnailDetailEntity.unavailable() =>
+      const ThumbnailDetailEntity(url: 'https://i0.wp.com/pambos.wine/wp-content/plugins/elementor/assets/images/placeholder.png?w=640&ssl=1', width: 0, height: 0);
 
   final String url;
   final int width;

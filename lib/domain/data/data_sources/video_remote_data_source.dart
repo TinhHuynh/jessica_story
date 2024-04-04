@@ -22,7 +22,7 @@ class VideoRemoteDataSourceImpl extends VideoRemoteDataSource {
       final params = {
         'part': 'snippet',
         'playlistId': ApiConstant.playlistId,
-        'maxResults': 20,
+        'maxResults': 10,
         'key': ApiConstant.apiKey,
         'pageToken': pageToken,
       };
