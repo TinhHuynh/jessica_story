@@ -1,5 +1,5 @@
-import '../domain/di/dependency.dart';
-import '../shared_libraries/core/di/dependency.dart';
+import '../../data/di/dependency.dart';
+import '../../shared_libraries/core/di/dependency.dart';
 
 class Injections {
   void init() {

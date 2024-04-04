@@ -1,10 +1,10 @@
 import 'package:bloc/bloc.dart';
 import 'package:jessica_story/shared_libraries/common/utils/state/view_data_state.dart';
 
-import '../../../../domain/domain/entities/youtube_video_entity.dart';
-import '../../../../domain/domain/usecases/get_video_usecase.dart';
-import '../../../../shared_libraries/common/utils/error/failure_response.dart';
-import '../../../../shared_libraries/core/pagination/paginated_result.dart';
+import '../../../../domain/entities/youtube_video_entity.dart';
+import '../../../../domain/usecases/get_video_usecase.dart';
+import '../../../../shared_libraries/common/utils/error/failure.dart';
+import '../../../../shared_libraries/common/utils/pagination/paginated_result.dart';
 import 'home_event.dart';
 import 'home_state.dart';
 

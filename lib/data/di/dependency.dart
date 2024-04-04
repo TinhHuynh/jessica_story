@@ -1,11 +1,11 @@
 
 
+import '../../data/data_sources/video_remote_data_source.dart';
+import '../../data/mappers/video_mapper.dart';
+import '../../data/repositories/video_repository_impl.dart';
+import '../../domain/repositories/video_repository.dart';
+import '../../domain/usecases/get_video_usecase.dart';
 import '../../shared_libraries/dependencies/get_it/get_it.dart';
-import '../data/data_sources/video_remote_data_source.dart';
-import '../data/mappers/video_mapper.dart';
-import '../data/repositories/video_repository_impl.dart';
-import '../domain/repositories/video_repository.dart';
-import '../domain/usecases/get_video_usecase.dart';
 
 class RegisterVideoModule {
   RegisterVideoModule() {
